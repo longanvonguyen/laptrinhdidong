@@ -1,0 +1,20 @@
+var AA = arrayOf("\"wink\"", "\"double blink\"", "\"close your eyes\"", "\"jump\"")
+fun AAHandshake(num: Int)
+{
+    val StringArray:MultableList<String> = multableListOf()
+    for (x in 0..3) {
+    	if(num and (0x1 shl x) != 0)
+        {
+            StringArray.add(AA[x])
+        }   	
+    }
+    print("\nNumber ${num}: ")
+    if(num and (0x1 shl 4) != 0)
+     	println(StringArray.reversed())
+    else
+    	println(StringArray)
+}
+fun main() {
+    AAHandshake(3)
+    AAHandshake(12)
+}
